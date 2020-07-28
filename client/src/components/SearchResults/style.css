@@ -1,0 +1,15 @@
+.search-results {
+  background-color:#ffffff;
+  color: #252525;
+  padding: 0;
+}
+
+p {
+  
+  margin-bottom: 0;
+}
+
+.covid-data span {
+  font-size: 32px;
+  font-weight: bolder;
+}
