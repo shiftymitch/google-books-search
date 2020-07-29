@@ -30,6 +30,7 @@ mongoose.connect(
 app.get("/api/books/:title", (req, res) => {
   axios.get("https://www.googleapis.com/books/v1/volumes?q="
     + req.params.title
+    + "&maxResults=40"
     + "&key="
     + process.env.GOOGLE_API_KEY)
       .then(response => {
