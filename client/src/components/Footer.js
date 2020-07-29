@@ -1,7 +1,7 @@
 import React from "react";
 
 function Footer() {
-    return <footer className="footer">
+    return <footer className="footer fixed-bottom">
         <div className="container-fluid">
             <div className="d-flex justify-content-center">
                 <h5 className="text-light">[site & background designed by <a href="https://github.com/shiftymitch" target="_blank" rel="noopener noreferrer">Mitch Henderson</a>]</h5>

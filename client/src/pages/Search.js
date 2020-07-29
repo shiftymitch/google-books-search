@@ -7,6 +7,13 @@ function Search() {
     const [search, setSearch] = useState();
     const [results, setResults] = useState([]);
 
+    let noSearch = "";
+    if (results.length === 0) {
+        noSearch = "Enter a book title above to find books!";
+    } else {
+        noSearch = ""
+    }
+
     function handleInputChange(event) {
         setSearch(event.target.value.replace(/\s/g, ''));
     };
@@ -33,6 +40,7 @@ function Search() {
                 <input onKeyPress={onKeyPress} onChange={handleInputChange}></input>
                 <button className="btn btn-sm btn-secondary ml-3" type="submit" onClick={handleFormSubmit} >Search</button>
             </div>
+            <h3 id="helper-text" className="text-center">{noSearch}</h3>
             <SearchResults results={results} />
         </div>
     );
