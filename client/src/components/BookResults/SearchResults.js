@@ -6,7 +6,7 @@ function SearchResults(props) {
 
   function handleSaveBtnClick(event) {
     let el = event.target.parentElement;
-    let image = el.parentElement.children[0].children[1].src;
+    let image = el.children[1].src;
     let title = el.children[2].children[0].innerText;
     let authors = el.children[2].children[1].innerText;
     let published = el.children[2].children[2].innerText;
@@ -29,10 +29,10 @@ function SearchResults(props) {
   let backupID = 0;
     
   return (
-    <div className="container-fluid text-left">
-      <ul className="search-results">
+    <div className="main-container container-fluid text-left">
+      <ul className="search-results row justify-content-around">
         {props.results.map(book => (
-          <li key={book.bookID === undefined ? backupID++ : `${book.bookID}`} className="list-group-item p-3">
+          <li key={book.bookID === undefined ? backupID++ : `${book.bookID}`} className="list-group-item p-3 card">
               <i className="fa fa-heart float-right" onClick={handleSaveBtnClick}></i>
               <img className="float-left mr-3" src={book.volumeInfo.imageLinks === undefined ? "" : `${book.volumeInfo.imageLinks.thumbnail}`} alt={book.volumeInfo.title}></img>
               <ul>

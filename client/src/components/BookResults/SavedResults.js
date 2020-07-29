@@ -20,9 +20,10 @@ function SearchResults(props) {
     <div className="container-fluid text-left">
       <h3 className="search-header text-center">{noBooks}</h3>
       
-      <ul className="search-results">
+      <ul className="search-results row justify-content-around">
       {props.savedBooks.map(book => (
-          <li key={book.bookID} className="list-group-item p-3">
+          <li key={book.bookID} 
+          className="list-group-item p-3 card">
             <i className="fa fa-trash float-right" onClick={handleDeleteBtnClick}></i>
             <img className="float-left mr-3" src={book.image} alt={book.title}></img>
             <ul>
