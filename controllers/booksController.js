@@ -28,7 +28,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    console.log(req.params.id)
     db.Book
       .deleteOne({ bookID: req.params.id })
       // .findById({ bookID: req.params.id })

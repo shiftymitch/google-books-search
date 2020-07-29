@@ -3,6 +3,12 @@ import "./style.css";
 import API from "../../utils/API";
 
 function SearchResults(props) {  
+  let noBooks = "";
+  if (props.savedBooks.length === 0) {
+    noBooks = "No books have been saved yet. Try searching for a book!";
+  } else {
+    noBooks = "Saved Books"
+  }
 
   function handleDeleteBtnClick(event) {
     let el = event.target.parentElement;
@@ -12,9 +18,11 @@ function SearchResults(props) {
     
   return (
     <div className="container-fluid text-left">
+      <h3 className="search-header text-center">{noBooks}</h3>
+      
       <ul className="search-results">
       {props.savedBooks.map(book => (
-          <li key={book.id} className="list-group-item p-3">
+          <li key={book.bookID} className="list-group-item p-3">
             <i className="fa fa-trash float-right" onClick={handleDeleteBtnClick}></i>
             <img className="float-left mr-3" src={book.image} alt={book.title}></img>
             <ul>

@@ -24,14 +24,17 @@ function SearchResults(props) {
       description: description.slice(13, description.length)
     })
   }
+
+  // fix for unique key when it throws error
+  let backupID = 0;
     
   return (
     <div className="container-fluid text-left">
       <ul className="search-results">
         {props.results.map(book => (
-          <li key={book.id} className="list-group-item p-3">
+          <li key={book.bookID === undefined ? backupID++ : `${book.bookID}`} className="list-group-item p-3">
               <i className="fa fa-heart float-right" onClick={handleSaveBtnClick}></i>
-              <img className="float-left mr-3" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}></img>
+              <img className="float-left mr-3" src={book.volumeInfo.imageLinks === undefined ? "" : `${book.volumeInfo.imageLinks.thumbnail}`} alt={book.volumeInfo.title}></img>
               <ul>
                   <li><strong>Title: </strong>{book.volumeInfo.title}</li>
                   <li><strong>Authors: </strong>{book.volumeInfo.authors}</li>

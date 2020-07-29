@@ -33,7 +33,6 @@ app.get("/api/books/:title", (req, res) => {
     + "&key="
     + process.env.GOOGLE_API_KEY)
       .then(response => {
-        // console.log(response.data.items);
         res.json(response.data.items);
       })
       .catch(e => console.log(e));

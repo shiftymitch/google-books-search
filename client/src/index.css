@@ -3,3 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.search-header {
+  color: #f9f9f9;
+}
+
+i {
+  color: #850000;
+}
+
+i:hover {
+  cursor: pointer;
+}
