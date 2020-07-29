@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
-import SearchResults from "../components/SearchResults/SearchResults";
+import React, { useState } from "react";
+import SearchResults from "../components/BookResults/SearchResults";
 import axios from "axios";
 
 function Search() {
 
     const [title, setTitle] = useState();
     const [results, setResults] = useState([]);
-
-    useEffect(() => {
-        
-    })
 
     function handleInputChange(event) {
         setTitle(event.target.value.replace(/\s/g, ''));
