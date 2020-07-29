@@ -10,6 +10,12 @@ function Search() {
     function handleInputChange(event) {
         setSearch(event.target.value.replace(/\s/g, ''));
     };
+
+    function onKeyPress(target) {
+        if(target.charCode === 13){
+            handleFormSubmit();
+        } 
+    }
     
     function handleFormSubmit() {
         axios.get(`/api/books/${search}`)
@@ -24,8 +30,8 @@ function Search() {
             <h3 className="text-center">Google Books Search</h3>
             <div className="mb-3">
                 <label className="mr-3">Book Title</label>
-                <input onChange={handleInputChange}></input>
-                <button className="btn btn-sm btn-secondary ml-3" type="submit" onClick={handleFormSubmit}>Search</button>
+                <input onKeyPress={onKeyPress} onChange={handleInputChange}></input>
+                <button className="btn btn-sm btn-secondary ml-3" type="submit" onClick={handleFormSubmit} >Search</button>
             </div>
             <SearchResults results={results} />
         </div>

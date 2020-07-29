@@ -38,7 +38,7 @@ function SearchResults(props) {
               <ul>
                   <li><strong>Title: </strong>{book.volumeInfo.title}</li>
                   <li><strong>Authors: </strong>{book.volumeInfo.authors}</li>
-                  <li><strong>Published: </strong>{book.volumeInfo.publishedDate.slice(0, 4)}</li>
+                  <li><strong>Published: </strong>{book.volumeInfo.publishedDate === undefined ? "" : `${book.volumeInfo.publishedDate.slice(0, 4)}`}</li>
                   <li><strong>Page Count: </strong>{book.volumeInfo.pageCount}</li>
                   <li><strong>ID: </strong>{book.id}</li>
               </ul>
