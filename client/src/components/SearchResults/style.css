@@ -1,15 +1,11 @@
-.search-results {
-  background-color:#ffffff;
-  color: #252525;
-  padding: 0;
+.list-group-item {
+    list-style-type: none;
+    margin-bottom: 25px;
+    padding: 2px;
+    border: 1px solid #dddddd;
 }
 
-p {
-  
-  margin-bottom: 0;
-}
-
-.covid-data span {
-  font-size: 32px;
-  font-weight: bolder;
+.list-group-item li {
+    list-style-type: none;
+    margin-bottom: 5px;
 }
