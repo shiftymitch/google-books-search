@@ -12,7 +12,7 @@ function SearchResults(props) {
     let published = el.children[2].children[2].innerText;
     let pages = el.children[2].children[3].innerText;
     let id = el.children[2].children[4].innerText;
-    let description = el.parentElement.children[0].children[3].innerText;
+    let description = el.children[3].innerText;
 
     API.saveBook({
       image: image,
